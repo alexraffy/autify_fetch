@@ -1,0 +1,21 @@
+{
+  "name": "autify_fetch",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "build_with_docker": "npm run build & npm run build_docker",
+    "run_local": "node lib/main.js --dest=data --metadata https://www.google.com",
+    "build_docker": "docker build -f Dockerfile -t autify_fetch .",
+    "run_docker_windows": "docker run --rm -i --name autify_fetch_test --volume=%CD%\\data:/data autify_fetch:latest node lib/main.js --metadata --dest=/data https://www.google.com https://autify.com",
+    "run_docker_posix": "docker run --rm -i --name autify_fetch_test --volume=`pwd`/data:/data autify_fetch:latest node lib/main.js --metadata --dest=/data https://www.google.com https://autify.com",
+    "print_usage": "node lib/main.js --help"
+  },
+  "dependencies": {
+    "puppeteer": "^19.2.2",
+    "fetch": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "typescript": "^4.8.4"
+  }
+}
