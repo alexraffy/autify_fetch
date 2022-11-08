@@ -65,7 +65,7 @@ That would also eliminate duplicate code as the function passed to evaluate is t
 - Images in CSS are not parsed
 - Links with no extensions are not loaded correctly
 - Reading file statistics on a mounted volume in docker does not return the right modification date.
-- For autify.com, the line <![CDATA[*/window.pagePath="/";/*]]> in the webpage source causes Chrome and Edge to redirect to the root of the local hard-drive. (The page is viewable in Firefox though).
+- For autify.com, the line window.pagePath="/" in the webpage source causes Chrome and Edge to redirect to the root of the local hard-drive. (The page is viewable in Firefox though).
 
 
 ## Critic
